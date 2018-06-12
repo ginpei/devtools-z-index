@@ -1,0 +1,6 @@
+,*
+/.vscode/
+/extension/vendor/*
+/node_modules/
+/extension.zip
+/npm-debug.log

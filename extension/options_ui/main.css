@@ -1,0 +1,40 @@
+html {
+  font-size: 16px;
+  overflow: hidden; /* avoid scroll bar in Chrome */
+}
+body {
+  font-size: 1rem;
+  min-width: 600px;
+}
+
+.settingsTable {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.settingsTable > caption {
+  font-weight: bold;
+  padding: 0.4em 1em;
+  text-align: left;
+}
+.settingsTable > * > tr > th,
+.settingsTable > * > tr > td {
+  border: 1px solid #ddd;
+  padding: 0.4em 1em;;
+}
+.settingsTable > * > tr > th {
+  font-weight: normal;
+  text-align: initial;
+  vertical-align: top;
+  width: 30%;
+}
+.settingsTable textarea {
+  width: 100%;
+}
+
+#chimeVolumeValue {
+  display: inline-block;
+  text-align: right;
+  width: 2em;
+}

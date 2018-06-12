@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "XXX",
+  "version": "1.0.0",
+  "description": "XXX",
+  "author": "Ginpei Takanashi",
+  "icons": {
+    "90": "icons/icon-90.png"
+  },
+  "permissions": [
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon-90.png",
+    "default_title": "XXX",
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "page": "background/index.html",
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ginpei.info/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "content_scripts/main.js"
+      ],
+      "css": [
+        "content_scripts/main.css"
+      ]
+    }
+  ],
+  "options_page": "options_ui/settings.html",
+  "options_ui": {
+    "page": "options_ui/settings.html",
+    "chrome_style": true
+  }
+}

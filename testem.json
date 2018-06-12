@@ -1,0 +1,11 @@
+{
+  "framework": "mocha+chai",
+  "src_files": [
+    "./node_modules/sinon/pkg/sinon.js",
+    "./node_modules/sinon-chai/lib/sinon-chai.js",
+    "./node_modules/sinon-chrome/bundle/sinon-chrome-apps.min.js",
+    "extension/**/*.js",
+    "!**/main.js",
+    "tests/**/*.spec.js"
+  ]
+}
