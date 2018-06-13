@@ -34,13 +34,6 @@ body {
   .rankingTableItem-zIndex {
     width: 60px;
   }
-  tbody .rankingTableItem-zIndex {
-    font-family: monospace;
-    text-align: right;
-  }
-  tbody .rankingTableItem-element {
-    font-style: italic;
-  }
   .rankingTableItem-tagName {
     color: rgb(136, 18, 128);
   }
@@ -49,4 +42,11 @@ body {
   }
   .rankingTableItem-classes {
     color: rgb(153, 69, 0);
+  }
+  tbody .rankingTableItem-zIndex {
+    font-family: monospace;
+    text-align: right;
+  }
+  tbody .rankingTableItem-element {
+    font-style: italic;
   }
