@@ -9,7 +9,7 @@
 
   async function start () {
     const pane = await createSidebarPane('z-index');
-    pane.setPage('/devtools_page/z-index.html');
+    pane.setPage('/devtools_page/panes/z-index.html');
   }
 
   start();
