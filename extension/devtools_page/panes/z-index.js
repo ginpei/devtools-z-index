@@ -59,10 +59,18 @@
     elTable.innerHTML = html;
   }
 
+  function clearTable () {
+    const elTable = document.querySelector('#rankingTable-body');
+    elTable.innerHTML = '';
+  }
+
   function start () {
-    document.querySelector('#update').onclick = () => {
+    window.addEventListener('pane-shown', () => {
       updateTable();
-    };
+    });
+    window.addEventListener('pane-hidden', () => {
+      clearTable();
+    });
 
     updateTable();
   }
