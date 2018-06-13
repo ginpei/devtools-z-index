@@ -1,4 +1,8 @@
-# WebExtension
+# z-index Ranking
+
+Chrome extension, Firefox add-on.
+
+![screenshot](doc/screenshot.png)
 
 ## License
 
@@ -8,5 +12,5 @@
 
 - Ginpei Takanashi
 - Twitter [@ginpei_en](http://twitter.com/ginpei_en)
-- GitHub [@ginpei](https://github.com/ginpei/) / [XXX](https://github.com/ginpei/XXX)
+- GitHub [@ginpei](https://github.com/ginpei/) / [z-index-ranking](https://github.com/ginpei/z-index-ranking)
 - [Ginpei.info](https://ginpei.info/)
