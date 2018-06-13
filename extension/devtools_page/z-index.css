@@ -3,17 +3,22 @@ body {
 }
 
 .rankingTable {
+  --border-value: 1px solid #aaa;
+
+  border: var(--border-value);
   border-collapse: collapse;
   width: 100%;
 }
-  .rankingTable > * > tr > th,
-  .rankingTable > * > tr > td {
-    border: 1px solid #aaa;
+  .rankingTable > * > tr > * {
+    border-left: var(--border-value);
   }
   .rankingTable > thead > tr {
-    background-color: hsla(0, 0%, 90%, 1);
+    background-color: #f3f3f3;
+    border: var(--border-value);
   }
   .rankingTable > thead > tr > th {
+    font-weight: normal;
+    text-align: left;
     white-space: nowrap;
   }
   .rankingTable > tbody > tr:nth-child(even) {
