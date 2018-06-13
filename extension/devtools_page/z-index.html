@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>z-index Ranking</title>
+  <link rel="stylesheet" href="/devtools_page/z-index.css">
+</head>
+<body>
+  <div class="controller">
+    <button id="update">Update</button>
+  </div>
+  <table id="rankingTable" class="rankingTable">
+    <thead>
+      <th class="rankingTableItem-zIndex">z-index</th>
+      <th class="rankingTableItem-element">Element</th>
+    </thead>
+    <tbody id="rankingTable-body"></tbody>
+  </table>
+  <script src="/vendor/webextension-polyfill/browser-polyfill.min.js"></script>
+  <script src="/devtools_page/z-index.js"></script>
+</body>
+</html>

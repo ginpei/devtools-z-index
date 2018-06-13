@@ -1,0 +1,47 @@
+body {
+  font-family: Consolas, Lucida Console, Courier New, monospace;
+}
+
+.rankingTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+  .rankingTable > * > tr > th,
+  .rankingTable > * > tr > td {
+    border: 1px solid #aaa;
+  }
+  .rankingTable > thead > tr {
+    background-color: hsla(0, 0%, 90%, 1);
+  }
+  .rankingTable > thead > tr > th {
+    white-space: nowrap;
+  }
+  .rankingTable > tbody > tr:nth-child(even) {
+    background-color: hsl(214, 70%, 97%);
+  }
+
+.rankingTableItem {
+}
+  .rankingTableItem-zIndex,
+  .rankingTableItem-element {
+    padding: 0.2em 0.4em;
+  }
+  .rankingTableItem-zIndex {
+    width: 60px;
+  }
+  tbody .rankingTableItem-zIndex {
+    font-family: monospace;
+    text-align: right;
+  }
+  tbody .rankingTableItem-element {
+    font-style: italic;
+  }
+  .rankingTableItem-tagName {
+    color: rgb(136, 18, 128);
+  }
+  .rankingTableItem-id {
+    color: rgb(26, 26, 166);
+  }
+  .rankingTableItem-classes {
+    color: rgb(153, 69, 0);
+  }
