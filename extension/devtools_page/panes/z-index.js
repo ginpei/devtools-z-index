@@ -1,6 +1,18 @@
 /* globals browser, chrome */
 
 (() => {
+  function executeScript (code) {
+    return new Promise(async (resolve, reject) => {
+      chrome.devtools.inspectedWindow.eval(code, (result) => {
+        if (result) {
+          resolve(result);
+        } else {
+          reject(new Error('Failed to execute code'));
+        }
+      });
+    });
+  }
+
   function getRanking () {
     const src = `
       (() => {
@@ -16,16 +28,7 @@
         return data;
       })();
     `;
-
-    return new Promise(async (resolve, reject) => {
-      chrome.devtools.inspectedWindow.eval(src, (result) => {
-        if (result) {
-          resolve(result);
-        } else {
-          reject(new Error('Failed to get ranking'));
-        }
-      });
-    });
+    return executeScript(src);
   }
 
   function buildElementTitleHtml (text, type, prefix = '') {
@@ -38,13 +41,25 @@
   function buildTableContentHtml (ranking) {
     return ranking
       .map((row) => {
-        const tagName = buildElementTitleHtml(row.tagName.toLowerCase(), 'tagName');
-        const id = buildElementTitleHtml(row.id, 'id', '#');
-        const classes = buildElementTitleHtml(row.classNames.join('.'), 'classes', '.');
+        const selector = [
+          row.tagName,
+          row.id ? `#${row.id}` : '',
+          row.classNames.length > 0 ? `.${row.classNames.join('.')}` : '',
+        ].join('');
+
+        const selectorHtml = [
+          buildElementTitleHtml(row.tagName.toLowerCase(), 'tagName'),
+          buildElementTitleHtml(row.id, 'id', '#'),
+          buildElementTitleHtml(row.classNames.join('.'), 'classes', '.'),
+        ].join('');
+
         const html = `
             <tr>
               <td class="rankingTableItem-zIndex">${row.zIndex}</td>
-              <td class="rankingTableItem-element">${tagName}${id}${classes}</td>
+              <td class="rankingTableItem-element">
+                <span class="rankingTableItem-selector"
+                  data-selector="${selector}">${selectorHtml}</span>
+              </td>
             </tr>
           `;
         return html;
@@ -64,12 +79,26 @@
     elTable.innerHTML = '';
   }
 
+  function selectElement (selector) {
+    const code = `console.log(document.querySelector('${selector}'));`;
+    executeScript(code);
+  }
+
   function start () {
     browser.runtime.onMessage.addListener(({ type }) => {
       if (type === 'updateTable') {
         updateTable();
       } else if (type === 'clearTable') {
         clearTable();
+      }
+    });
+
+    const elTable = document.querySelector('#rankingTable-body');
+    elTable.addEventListener('click', (event) => {
+      const elSelector = event.target.closest('[data-selector]');
+      if (elSelector) {
+        const selector = elSelector.getAttribute('data-selector');
+        selectElement(selector);
       }
     });
 
