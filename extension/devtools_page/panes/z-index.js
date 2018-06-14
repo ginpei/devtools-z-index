@@ -1,16 +1,14 @@
-/* globals browser, chrome */
+/* globals browser */
 
 (() => {
-  function executeScript (code) {
-    return new Promise(async (resolve, reject) => {
-      chrome.devtools.inspectedWindow.eval(code, (result) => {
-        if (result) {
-          resolve(result);
-        } else {
-          reject(new Error('Failed to execute code'));
-        }
-      });
-    });
+  async function executeScript (code) {
+    // this returns the result if succeeded
+    // but it returns `[undefined, { isException, value }]` if failed (WTF)
+    const returnedValue = await browser.devtools.inspectedWindow.eval(code);
+    if (returnedValue && returnedValue[1] && returnedValue[1].isException) {
+      throw new Error(returnedValue[1].value);
+    }
+    return returnedValue;
   }
 
   function getRanking () {
