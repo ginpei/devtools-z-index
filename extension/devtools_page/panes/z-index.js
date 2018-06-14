@@ -1,4 +1,4 @@
-/* globals chrome */
+/* globals browser, chrome */
 
 (() => {
   function getRanking () {
@@ -65,11 +65,12 @@
   }
 
   function start () {
-    window.addEventListener('pane-shown', () => {
-      updateTable();
-    });
-    window.addEventListener('pane-hidden', () => {
-      clearTable();
+    browser.runtime.onMessage.addListener(({ type }) => {
+      if (type === 'updateTable') {
+        updateTable();
+      } else if (type === 'clearTable') {
+        clearTable();
+      }
     });
 
     updateTable();
