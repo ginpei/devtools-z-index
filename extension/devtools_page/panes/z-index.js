@@ -80,7 +80,7 @@
   }
 
   function selectElement (selector) {
-    const code = `console.log(document.querySelector('${selector}'));`;
+    const code = `inspect(document.querySelector('${selector}'));`;
     executeScript(code);
   }
 
