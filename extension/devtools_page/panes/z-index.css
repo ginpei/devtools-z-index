@@ -2,6 +2,10 @@ body {
   font-family: Consolas, Lucida Console, Courier New, monospace;
 }
 
+.about {
+  text-align: right;
+}
+
 .rankingTable {
   --border-value: 1px solid #aaa;
 

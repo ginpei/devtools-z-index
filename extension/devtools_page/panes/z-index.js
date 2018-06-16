@@ -101,6 +101,15 @@
       }
     });
 
+    document.addEventListener('click', (event) => {
+      const elLink = event.target.closest('a');
+      if (elLink) {
+        event.preventDefault();
+        const url = elLink.href;
+        window.open(url);
+      }
+    });
+
     updateTable();
   }
 
