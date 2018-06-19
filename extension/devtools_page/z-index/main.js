@@ -15,7 +15,7 @@
   }
 
   function getRanking () {
-    const code = `(${ZRankingTableUI.finder.toString()})()`;
+    const code = `(${ZRankingTableUI.buildRanking.toString()})()`;
     return executeScript(code);
   }
 

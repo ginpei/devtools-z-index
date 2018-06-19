@@ -62,7 +62,7 @@ class ZRankingTableUI {
   }
 }
 
-ZRankingTableUI.finder = (d = document) => {
+ZRankingTableUI.buildRanking = (d = document) => {
   const ranking = Array.from(d.querySelectorAll('*'))
     .map((el) => ({
       classNames: Array.from(el.classList),

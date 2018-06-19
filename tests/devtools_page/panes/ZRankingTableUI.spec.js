@@ -145,7 +145,7 @@ describe('ZRankingTableUI', () => {
     });
   });
 
-  describe('ZRankingTableUI.finder()', () => {
+  describe('ZRankingTableUI.buildRanking()', () => {
     let elFrame;
     let d;
     let ranking;
@@ -196,7 +196,7 @@ describe('ZRankingTableUI', () => {
         <div class="higher-z-index"></div>
       `;
 
-      ranking = ZRankingTableUI.finder(d);
+      ranking = ZRankingTableUI.buildRanking(d);
     });
 
     afterEach(() => {
