@@ -6,7 +6,7 @@
   }
 
   async function createSidebarPane (title) {
-    const htmlPath = '/devtools_page/panes/z-index.html';
+    const htmlPath = '/devtools_page/z-index/index.html';
 
     let pane;
 
