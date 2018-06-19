@@ -8,6 +8,10 @@ module.exports = {
     "browser": false,
   },
   rules: {
+    "arrow-parens": [
+      "error",
+      "always",
+    ],
     "class-methods-use-this": [
       "off",
     ],
