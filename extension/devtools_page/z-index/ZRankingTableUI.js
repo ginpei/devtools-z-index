@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 class ZRankingTableUI {
   constructor () {
-    this.onClickListener = (event) => {
+    this._onClickListener = (event) => {
       const elSelector = event.target.closest('[data-selector]');
       if (elSelector) {
         const selector = elSelector.getAttribute('data-selector');
@@ -14,26 +14,22 @@ class ZRankingTableUI {
 
   start ({ elTable }) {
     this.elTable = elTable;
-    this.elTable.addEventListener('click', this.onClickListener);
+    this.elTable.addEventListener('click', this._onClickListener);
   }
 
   stop () {
-    this.elTable.removeEventListener('click', this.onClickListener);
+    this.elTable.removeEventListener('click', this._onClickListener);
     this.elTable = null;
   }
 
-  async updateTable ({ ranking }) {
-    const html = this.buildTableContentHtml(ranking);
+  async updateTable ({ ranking = [] }) {
+    const html = ranking
+      .map((row) => this._buildTableRowHtml(row))
+      .join('');
     this.elTable.innerHTML = html;
   }
 
-  buildTableContentHtml (ranking) {
-    return ranking
-      .map((row) => this.buildTableRowHtml(row))
-      .join('');
-  }
-
-  buildTableRowHtml (row) {
+  _buildTableRowHtml (row) {
     const selector = [
       row.tagName,
       row.id ? `#${row.id}` : '',
@@ -41,9 +37,9 @@ class ZRankingTableUI {
     ].join('');
 
     const selectorHtml = [
-      this.buildElementTitleHtml(row.tagName.toLowerCase(), 'tagName'),
-      this.buildElementTitleHtml(row.id, 'id', '#'),
-      this.buildElementTitleHtml(row.classNames.join('.'), 'classes', '.'),
+      this._buildElementTitleHtml(row.tagName.toLowerCase(), 'tagName'),
+      this._buildElementTitleHtml(row.id, 'id', '#'),
+      this._buildElementTitleHtml(row.classNames.join('.'), 'classes', '.'),
     ].join('');
 
     const html = `
@@ -58,14 +54,10 @@ class ZRankingTableUI {
     return html;
   }
 
-  buildElementTitleHtml (text, type, prefix = '') {
+  _buildElementTitleHtml (text, type, prefix = '') {
     if (text) {
       return `<span class="rankingTableItem-${type}">${prefix}${text}</span>`;
     }
     return '';
-  }
-
-  clearTable () {
-    this.elTable.innerHTML = '';
   }
 }

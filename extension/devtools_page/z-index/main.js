@@ -37,6 +37,10 @@
     tableUi.updateTable({ ranking });
   }
 
+  async function clearTable () {
+    tableUi.updateTable({});
+  }
+
   function selectElement (selector) {
     const code = `inspect(document.querySelector('${selector}'));`;
     executeScript(code);
@@ -53,7 +57,7 @@
       if (type === 'updateTable') {
         updateTable();
       } else if (type === 'clearTable') {
-        tableUi.clearTable();
+        clearTable();
       }
     });
 
