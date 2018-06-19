@@ -3,7 +3,7 @@
   "scripts": {
     "build": "npm run install-vendor",
     "clean": "rm extension.zip",
-    "lint": "eslint --ignore-pattern '/extension/vendor/*' extension",
+    "lint": "eslint --ignore-pattern '/extension/vendor/*' extension && addons-linter extension",
     "install-vendor": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js extension/vendor/webextension-polyfill/",
     "start": "# TODO",
     "pack": "npm run clean && npm run build && cd extension && zip -r ../extension.zip . -x */.gitkeep",
@@ -15,6 +15,7 @@
     "webextension-polyfill": "^0.2.1"
   },
   "devDependencies": {
+    "addons-linter": "^1.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
