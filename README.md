@@ -1,7 +1,7 @@
 # DevTools z-index
 
-[![Download from Chrome Web Store](doc\ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted)
-[![Download Firefox add-ons](doc\AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/)
+[![Download from Chrome Web Store](doc/ChromeWebStore_Badge_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted)
+[![Download Firefox add-ons](doc/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/)
 
 ## Chrome extension
 
