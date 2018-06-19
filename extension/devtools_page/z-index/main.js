@@ -15,21 +15,8 @@
   }
 
   function getRanking () {
-    const src = `
-      (() => {
-        const data = Array.from(document.querySelectorAll('*'))
-          .map((el) => ({
-            classNames: Array.from(el.classList),
-            id: el.id,
-            tagName: el.tagName,
-            zIndex: getComputedStyle(el).zIndex,
-          }))
-          .filter(({ zIndex }) => !isNaN(zIndex))
-          .sort((r1, r2) => r2.zIndex - r1.zIndex);
-        return data;
-      })();
-    `;
-    return executeScript(src);
+    const code = `(${ZRankingTableUI.finder.toString()})()`;
+    return executeScript(code);
   }
 
   async function updateTable () {

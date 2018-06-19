@@ -37,7 +37,7 @@ class ZRankingTableUI {
     ].join('');
 
     const selectorHtml = [
-      this._buildElementTitleHtml(row.tagName.toLowerCase(), 'tagName'),
+      this._buildElementTitleHtml(row.tagName, 'tagName'),
       this._buildElementTitleHtml(row.id, 'id', '#'),
       this._buildElementTitleHtml(row.classNames.join('.'), 'classes', '.'),
     ].join('');
@@ -61,3 +61,16 @@ class ZRankingTableUI {
     return '';
   }
 }
+
+ZRankingTableUI.finder = (d = document) => {
+  const ranking = Array.from(d.querySelectorAll('*'))
+    .map((el) => ({
+      classNames: Array.from(el.classList),
+      id: el.id,
+      tagName: el.tagName.toLowerCase(),
+      zIndex: Number(getComputedStyle(el).zIndex),
+    }))
+    .filter(({ zIndex }) => !Number.isNaN(zIndex))
+    .sort((r1, r2) => r2.zIndex - r1.zIndex);
+  return ranking;
+};

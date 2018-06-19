@@ -144,4 +144,97 @@ describe('ZRankingTableUI', () => {
       expect(elRowList).to.have.lengthOf(0);
     });
   });
+
+  describe('ZRankingTableUI.finder()', () => {
+    let elFrame;
+    let d;
+    let ranking;
+
+    beforeEach(() => {
+      elFrame = document.createElement('iframe');
+      elFrame.style.position = 'absolute';
+      elFrame.style.left = '-9999px';
+      elFrame.src = 'about:blank';
+      document.body.appendChild(elFrame);
+      d = elFrame.contentWindow.document;
+
+      const elStyle = document.createElement('style');
+      elStyle.innerHTML = `
+        #by-id { z-index: 1; }
+        .by-class { z-index: 1; }
+        x-by-tag-name { z-index: 1; }
+        .auto-z-index { z-index: auto; }
+        .zero-z-index { z-index: 0; }
+        .minus-z-index { z-index: -1; }
+        .lower-z-index { z-index: -10; }
+        .high-z-index { z-index: 2; }
+        .higher-z-index { z-index: 10; }
+      `;
+      d.head.appendChild(elStyle);
+
+      d.body.innerHTML = `
+        <div id="by-id"></div>
+
+        <div style="z-index: 1"></div>
+
+        <div class="no-styles"></div>
+        <x-by-tag-name></x-by-tag-name>
+        <div class="auto-z-index"></div>
+        <div class="zero-z-index"></div>
+        <div class="minus-z-index"></div>
+        <div class="lower-z-index"></div>
+        <div class="high-z-index"></div>
+        <div class="higher-z-index"></div>
+
+        <div class="no-styles"></div>
+        <x-by-tag-name></x-by-tag-name>
+        <div class="auto-z-index"></div>
+        <div class="zero-z-index"></div>
+        <div class="minus-z-index"></div>
+        <div class="lower-z-index"></div>
+        <div class="high-z-index"></div>
+        <div class="higher-z-index"></div>
+      `;
+
+      ranking = ZRankingTableUI.finder(d);
+    });
+
+    afterEach(() => {
+      document.body.removeChild(elFrame);
+    });
+
+    it('gather elements ignoring "auto" and default', () => {
+      expect(ranking).to.have.lengthOf(14);
+    });
+
+    it('sorts by number, not as string', () => {
+      expect(ranking[0]).to.eql({
+        tagName: 'div',
+        id: '',
+        classNames: ['higher-z-index'],
+        zIndex: 10,
+      });
+      expect(ranking[2]).to.eql({
+        tagName: 'div',
+        id: '',
+        classNames: ['high-z-index'],
+        zIndex: 2,
+      });
+    });
+
+    it('sorts minus', () => {
+      expect(ranking[10]).to.eql({
+        tagName: 'div',
+        id: '',
+        classNames: ['minus-z-index'],
+        zIndex: -1,
+      });
+      expect(ranking[12]).to.eql({
+        tagName: 'div',
+        id: '',
+        classNames: ['lower-z-index'],
+        zIndex: -10,
+      });
+    });
+  });
 });
