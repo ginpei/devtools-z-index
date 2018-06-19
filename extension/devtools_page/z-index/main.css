@@ -6,6 +6,11 @@ body {
   text-align: right;
 }
 
+.note {
+  color: gray;
+  font-size: italic;
+}
+
 .rankingTable {
   --border-value: 1px solid #aaa;
 
