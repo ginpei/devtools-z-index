@@ -207,6 +207,15 @@ describe('ZRankingTableUI', () => {
       expect(ranking).to.have.lengthOf(14);
     });
 
+    it('includes 0', () => {
+      expect(ranking[8]).to.eql({
+        tagName: 'div',
+        id: '',
+        classNames: ['zero-z-index'],
+        zIndex: 0,
+      });
+    });
+
     it('sorts by number, not as string', () => {
       expect(ranking[0]).to.eql({
         tagName: 'div',
