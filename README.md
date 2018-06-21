@@ -35,7 +35,7 @@ Since Firefox doesn't allow us to add nice Inspector (Elements) panel's pane, I 
 
 ## Code snippet
 
-Basic idea was in Gist.
+Basic idea was in [Twitter](https://twitter.com/ginpei_jp/status/1006312787813908480) and Gist.
 
 https://gist.github.com/ginpei/073ab5d4679356f29585a9ae02277012
 
