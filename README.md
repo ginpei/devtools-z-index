@@ -37,7 +37,7 @@ Since Firefox doesn't allow us to add nice Inspector (Elements) panel's pane, I 
 
 Basic idea was in Gist.
 
-- https://gist.github.com/ginpei/073ab5d4679356f29585a9ae02277012
+https://gist.github.com/ginpei/073ab5d4679356f29585a9ae02277012
 
 ```js
 ((document, limit) => {
