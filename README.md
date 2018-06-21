@@ -33,6 +33,23 @@ https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/
 
 Since Firefox doesn't allow us to add nice Inspector (Elements) panel's pane, I added it as a panel.
 
+## Code snippet
+
+Basic idea was in Gist.
+
+- https://gist.github.com/ginpei/073ab5d4679356f29585a9ae02277012
+
+```js
+((document, limit) => {
+  const data = Array.from(document.querySelectorAll('*'))
+    .map((el) => ({zIndex: Number(getComputedStyle(el).zIndex), element: el }))
+    .filter(({ zIndex }) => !isNaN(zIndex))
+    .sort((r1, r2) => r2.zIndex - r1.zIndex)
+    .slice(0, limit);
+  console.table(data);
+})(document, 50);
+```
+
 ## Future feature
 
 Honestly, I'm not planning to update since I felt satisfied tough, it would be fun to add following features.
