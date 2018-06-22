@@ -1,5 +1,7 @@
 # DevTools z-index
 
+[![Build Status](https://travis-ci.org/ginpei/devtools-z-index.svg?branch=master)](https://travis-ci.org/ginpei/devtools-z-index)
+
 → [日本語の紹介記事](https://ginpen.com/2018/06/20/devtools-z-index/)
 
 **Stop `z-index: 999999` !!**
