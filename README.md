@@ -8,6 +8,8 @@
 
 This adds "z-index" sub-pane of Elements panel for Chrome, "z-index" panel for Firefox.
 
+### Install
+
 [![Download from Chrome Web Store](doc/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted)
 [![Download Firefox add-ons](doc/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/)
 
