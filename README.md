@@ -27,7 +27,7 @@ https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publi
 
 ![z-index pane in Elements panel, where you can find all elements with z-index](doc/screenshot.png)
 
-![Click a selector to inspect the element in Elements panel](doc/video-400x269.gif)
+![Click a selector to inspect the element in Elements panel](doc/video-500x337.gif)
 
 ## Firefox add-on
 
