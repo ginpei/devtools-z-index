@@ -17,9 +17,9 @@
   "devDependencies": {
     "addons-linter": "^1.1.0",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.12.0",
-    "sinon": "^5.1.1",
+    "sinon": "^6.0.0",
     "sinon-chai": "^3.2.0",
     "sinon-chrome": "^2.3.2",
     "testem": "^2.8.0"
