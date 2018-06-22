@@ -1,6 +1,6 @@
 # DevTools z-index
 
-[![Build Status](https://travis-ci.org/ginpei/devtools-z-index.svg?branch=master)](https://travis-ci.org/ginpei/devtools-z-index)
+[![Build Status](https://travis-ci.org/ginpei/devtools-z-index.svg?branch=master)](https://travis-ci.org/ginpei/devtools-z-index) [![Greenkeeper badge](https://badges.greenkeeper.io/ginpei/devtools-z-index.svg)](https://greenkeeper.io/)
 
 → [日本語の紹介記事](https://ginpen.com/2018/06/20/devtools-z-index/)
 
@@ -9,7 +9,7 @@
 This adds "z-index" sub-pane of Elements panel for Chrome, "z-index" panel for Firefox.
 
 [![Download from Chrome Web Store](doc/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted)
-[![Download Firefox add-ons](doc/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/) [![Greenkeeper badge](https://badges.greenkeeper.io/ginpei/devtools-z-index.svg)](https://greenkeeper.io/)
+[![Download Firefox add-ons](doc/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/)
 
 ## What for?
 
