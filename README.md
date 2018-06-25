@@ -10,7 +10,7 @@ This adds "z-index" sub-pane of Elements panel for Chrome, "z-index" panel for F
 
 ### Install
 
-[![Download from Chrome Web Store](doc/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted)
+[![Download from Chrome Web Store](doc/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/)
 [![Download Firefox add-ons](doc/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/devtools-z-index/)
 
 ## What for?
@@ -23,7 +23,7 @@ This extension offers a table that helps reduce those numbers. You can keep your
 
 ## Chrome extension
 
-https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/publish-accepted
+https://chrome.google.com/webstore/detail/bcnpmhefiohkpmjacfoanhbjhikegmoe/
 
 ![z-index pane in Elements panel, where you can find all elements with z-index](doc/screenshot.png)
 
