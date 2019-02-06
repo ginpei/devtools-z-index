@@ -12,7 +12,7 @@
     "test-travis": "testem ci --launch Firefox"
   },
   "dependencies": {
-    "webextension-polyfill": "^0.3.0"
+    "webextension-polyfill": "^0.4.0"
   },
   "devDependencies": {
     "addons-linter": "^1.1.0",
