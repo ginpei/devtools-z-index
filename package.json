@@ -1,6 +1,5 @@
 {
   "private": true,
-  "name": "devtools-z-index",
   "scripts": {
     "build": "npm run install-vendor",
     "clean": "rm extension.zip || true",
