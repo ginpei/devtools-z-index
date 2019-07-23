@@ -1,4 +1,4 @@
-/* globals browser, chrome, ZRankingTableUI */
+/* globals chrome, ZRankingTableUI */
 
 (() => {
   const tableUi = new ZRankingTableUI();

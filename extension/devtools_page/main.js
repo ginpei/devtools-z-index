@@ -1,5 +1,3 @@
-/* globals browser */
-
 (() => {
   function sendMessage (type) {
     browser.runtime.sendMessage({ type });
