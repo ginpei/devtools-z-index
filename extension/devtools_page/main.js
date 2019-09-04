@@ -3,8 +3,9 @@
     browser.runtime.sendMessage({ type });
   }
 
-  async function createSidebarPane (title) {
-    const htmlPath = '/devtools_page/z-index/index.html';
+  async function createSidebarPane (title, themeName) {
+    const baseHtmlPath = '/devtools_page/z-index/index.html';
+    const htmlPath = `${baseHtmlPath}?themeName=${themeName}`;
 
     let pane;
 
@@ -25,7 +26,9 @@
   }
 
   async function start () {
-    const pane = await createSidebarPane('z-index');
+    const { themeName } = browser.devtools.panels;
+
+    const pane = await createSidebarPane('z-index', themeName);
     pane.onShown.addListener(() => sendMessage('updateTable'));
     pane.onHidden.addListener(() => sendMessage('clearTable'));
     browser.devtools.panels.elements.onSelectionChanged.addListener(() => {

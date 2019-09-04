@@ -2,6 +2,10 @@ body {
   font-family: Consolas, Lucida Console, Courier New, monospace;
 }
 
+a {
+  color: rgb(15%, 15%, 15%);
+}
+
 .about {
   text-align: right;
 }
@@ -63,3 +67,33 @@ body {
   tbody .rankingTableItem-element {
     font-style: italic;
   }
+
+/* wish the media query worked in the DevTool */
+[data-theme-name="dark"] body {
+  background-color: rgb(36, 36, 36);
+  color: rgb(213, 213, 213);
+}
+[data-theme-name="dark"] a {
+  color: rgb(211, 211, 211);
+}
+[data-theme-name="dark"] .rankingTable {
+  --border-value: 1px solid rgb(85, 85, 85);
+}
+[data-theme-name="dark"] .rankingTable > thead > tr {
+  background-color: #333;
+}
+[data-theme-name="dark"] .rankingTable > tbody > tr:nth-child(even) {
+  background-color: rgb(11, 37, 68);
+}
+[data-theme-name="dark"] .rankingTableItem-tagName {
+  color: rgb(93, 176, 215);
+}
+[data-theme-name="dark"] .rankingTableItem-id {
+  color: rgb(242, 151, 102);
+}
+[data-theme-name="dark"] .rankingTableItem-classes {
+  color: rgb(155, 187, 220);
+}
+[data-theme-name="dark"] .note {
+  color: rgb(137, 137, 137);
+}

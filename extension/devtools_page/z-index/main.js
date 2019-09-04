@@ -28,12 +28,25 @@
     tableUi.updateTable({});
   }
 
+  function initColorScheme () {
+    const paramPairs = window.location.search.slice(1).split('&');
+    const themeNameParam = paramPairs.find((v) => v.startsWith('themeName='));
+    if (!themeNameParam) {
+      return;
+    }
+
+    const themeName = themeNameParam.split('=')[1];
+    document.documentElement.dataset.themeName = themeName;
+  }
+
   function selectElement (selector) {
     const code = `inspect(document.querySelector('${selector}'));`;
     executeScript(code);
   }
 
   function start () {
+    initColorScheme();
+
     const elTable = document.querySelector('#rankingTable-body');
     tableUi.start({ elTable });
     tableUi.onSelect = (selector) => {
