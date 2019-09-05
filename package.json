@@ -2,12 +2,11 @@
   "private": true,
   "name": "devtools-z-index",
   "scripts": {
-    "build": "npm run install-vendor",
     "clean": "rm extension.zip || true",
     "lint": "eslint --ignore-pattern '/extension/vendor/*' extension && addons-linter extension",
     "install-vendor": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js extension/vendor/webextension-polyfill/",
     "start": "# TODO",
-    "pack": "npm run clean && npm run build && cd extension && zip -r ../extension.zip . -x */.gitkeep",
+    "pack": "npm run clean && npm run install-vendor && cd extension && zip -r ../extension.zip . -x */.gitkeep",
     "postinstall": "npm run install-vendor",
     "test": "testem",
     "test-travis": "testem ci --launch Firefox"
