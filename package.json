@@ -15,7 +15,10 @@
     "webextension-polyfill": "^0.4.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.1",
     "@types/firefox-webext-browser": "^67.0.2",
+    "@types/mocha": "^5.2.7",
+    "@types/sinon": "^7.0.13",
     "addons-linter": "^1.12.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",

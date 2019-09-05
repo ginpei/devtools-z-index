@@ -1,9 +1,16 @@
-/* globals sinon, ZRankingTableUI */
+/* globals ZRankingTableUI */
+
+/**
+ * @typedef {HTMLElement & { textContent: string }} HTMLElementWithText
+ */
 
 describe('ZRankingTableUI', () => {
   const { expect } = chai;
 
+  /** @type {ZRankingTableUI} */
   let tableUi;
+
+  /** @type {HTMLTableElement} */
   let elTable;
 
   before(() => {
@@ -24,10 +31,12 @@ describe('ZRankingTableUI', () => {
             tagName: 'div',
             id: 'penguin',
             classNames: ['foo', 'bar', 'boo'],
+            zIndex: 1,
           },
         ],
       });
-      const elSelector = elTable.querySelector('[data-selector]');
+      /** @type {HTMLElement} */
+      const elSelector = (elTable.querySelector('[data-selector]'));
       elSelector.dispatchEvent(new Event('click', { bubbles: true }));
     });
 
@@ -44,13 +53,15 @@ describe('ZRankingTableUI', () => {
             tagName: 'div',
             id: 'penguin',
             classNames: ['foo', 'bar', 'boo'],
+            zIndex: 1,
           },
         ],
       });
 
       tableUi.stop();
 
-      const elSelector = elTable.querySelector('[data-selector]');
+      /** @type {HTMLElement} */
+      const elSelector = (elTable.querySelector('[data-selector]'));
       elSelector.dispatchEvent(new Event('click', { bubbles: true }));
     });
 
@@ -93,30 +104,36 @@ describe('ZRankingTableUI', () => {
     it('renders a selector with ID and classes', () => {
       const elRowList = elTable.querySelectorAll('tbody tr');
 
-      const elZ = elRowList[0].querySelector('.rankingTableItem-zIndex');
+      /** @type {HTMLElementWithText} */
+      const elZ = (elRowList[0].querySelector('.rankingTableItem-zIndex'));
       expect(elZ.textContent.trim()).to.eql('999');
 
-      const elElement = elRowList[0].querySelector('.rankingTableItem-element');
+      /** @type {HTMLElementWithText} */
+      const elElement = (elRowList[0].querySelector('.rankingTableItem-element'));
       expect(elElement.textContent.trim()).to.eql('div#penguin.foo.bar.boo');
     });
 
     it('renders a selector with only 1 class', () => {
       const elRowList = elTable.querySelectorAll('tbody tr');
 
-      const elZ = elRowList[1].querySelector('.rankingTableItem-zIndex');
+      /** @type {HTMLElementWithText} */
+      const elZ = (elRowList[1].querySelector('.rankingTableItem-zIndex'));
       expect(elZ.textContent.trim()).to.eql('1');
 
-      const elElement = elRowList[1].querySelector('.rankingTableItem-element');
+      /** @type {HTMLElementWithText} */
+      const elElement = (elRowList[1].querySelector('.rankingTableItem-element'));
       expect(elElement.textContent.trim()).to.eql('span.hello');
     });
 
     it('renders a selector without ID and classes', () => {
       const elRowList = elTable.querySelectorAll('tbody tr');
 
-      const elZ = elRowList[2].querySelector('.rankingTableItem-zIndex');
+      /** @type {HTMLElementWithText} */
+      const elZ = (elRowList[2].querySelector('.rankingTableItem-zIndex'));
       expect(elZ.textContent.trim()).to.eql('-1');
 
-      const elElement = elRowList[2].querySelector('.rankingTableItem-element');
+      /** @type {HTMLElementWithText} */
+      const elElement = (elRowList[2].querySelector('.rankingTableItem-element'));
       expect(elElement.textContent.trim()).to.eql('marquee');
     });
 
@@ -134,7 +151,8 @@ describe('ZRankingTableUI', () => {
       const elRowList = elTable.querySelectorAll('tbody tr');
       expect(elRowList).to.have.lengthOf(1);
 
-      const el = elRowList[0].querySelector('.rankingTableItem-element');
+      /** @type {HTMLElementWithText} */
+      const el = (elRowList[0].querySelector('.rankingTableItem-element'));
       expect(el.textContent.trim()).to.eql('x-link.extended');
     });
 
@@ -146,12 +164,21 @@ describe('ZRankingTableUI', () => {
   });
 
   describe('ZRankingTableUI.buildRanking()', () => {
+    /** @type {HTMLIFrameElement} */
     let elFrame;
+
+    /** @type {Document} */
     let d;
+
+    /** @type {ZIndexRecord[]} */
     let ranking;
 
     beforeEach(() => {
       elFrame = document.createElement('iframe');
+      if (!elFrame.contentWindow) {
+        throw new Error('elFrame.contentWindow not found');
+      }
+
       elFrame.style.position = 'absolute';
       elFrame.style.left = '-9999px';
       elFrame.src = 'about:blank';
