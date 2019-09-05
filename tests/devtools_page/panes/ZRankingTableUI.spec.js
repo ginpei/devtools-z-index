@@ -175,14 +175,15 @@ describe('ZRankingTableUI', () => {
 
     beforeEach(() => {
       elFrame = document.createElement('iframe');
-      if (!elFrame.contentWindow) {
-        throw new Error('elFrame.contentWindow not found');
-      }
-
       elFrame.style.position = 'absolute';
       elFrame.style.left = '-9999px';
       elFrame.src = 'about:blank';
       document.body.appendChild(elFrame);
+
+      if (!elFrame.contentWindow) {
+        throw new Error('elFrame.contentWindow not found');
+      }
+
       d = elFrame.contentWindow.document;
 
       const elStyle = document.createElement('style');
