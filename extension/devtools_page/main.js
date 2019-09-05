@@ -1,8 +1,15 @@
 (() => {
+  /**
+   * @param {'updateTable' | 'clearTable'} type
+   */
   function sendMessage (type) {
     browser.runtime.sendMessage({ type });
   }
 
+  /**
+   * @param {string} title
+   * @param {string} themeName
+   */
   async function createSidebarPane (title, themeName) {
     const baseHtmlPath = '/devtools_page/z-index/index.html';
     const htmlPath = `${baseHtmlPath}?themeName=${themeName}`;

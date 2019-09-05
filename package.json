@@ -3,7 +3,7 @@
   "name": "devtools-z-index",
   "scripts": {
     "clean": "rm extension.zip || true",
-    "lint": "eslint extension && addons-linter extension",
+    "lint": "eslint extension && tsc && addons-linter extension",
     "install-vendor": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js extension/vendor/webextension-polyfill/",
     "start": "# TODO",
     "pack": "npm run lint && npm run clean && npm run install-vendor && cd extension && zip -r ../extension.zip . -x */.gitkeep",
@@ -15,6 +15,7 @@
     "webextension-polyfill": "^0.4.0"
   },
   "devDependencies": {
+    "@types/firefox-webext-browser": "^67.0.2",
     "addons-linter": "^1.12.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -22,6 +23,7 @@
     "sinon": "^7.3.1",
     "sinon-chai": "^3.2.0",
     "sinon-chrome": "^3.0.0",
-    "testem": "^2.17.0"
+    "testem": "^2.17.0",
+    "typescript": "^3.6.2"
   }
 }
