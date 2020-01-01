@@ -27,7 +27,7 @@
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0",
     "sinon-chrome": "^3.0.1",
-    "testem": "^2.17.0",
+    "testem": "^3.0.2",
     "typescript": "^3.6.3"
   }
 }
