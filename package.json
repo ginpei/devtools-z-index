@@ -20,7 +20,7 @@
     "@types/mocha": "^5.2.7",
     "@types/sinon": "^7.0.13",
     "@types/sinon-chai": "^3.2.3",
-    "addons-linter": "^1.14.0",
+    "addons-linter": "^2.1.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
