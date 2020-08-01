@@ -28,6 +28,6 @@
     "sinon-chai": "^3.3.0",
     "sinon-chrome": "^3.0.1",
     "testem": "^2.17.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.9.7"
   }
 }
