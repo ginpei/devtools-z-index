@@ -64,6 +64,25 @@ Honestly, I'm not planning to update since I felt satisfied tough, it would be f
 - Ability to update z-index for preview, like DevTools Style sub-pane
 - Set better icon somehow
 
+## Dev
+
+### Development for Chrome
+
+1. Open Extensions page
+   1. `chrome://extensions/`
+2. Turn on "Developer mode" switch at the top right
+3. Press "Load unpacked" button
+4. Select `extension/` directory on this project
+5. Modify code and resources, press a reload button in the Extensions page
+
+### Publish
+
+1. Make sure `zip` is installed
+   1. `apt install zip` for WSL
+2. Run `npm run build`
+3. You will get a file `extension.zip` in the project root directory
+4. TODO
+
 ## License
 
 - MIT
