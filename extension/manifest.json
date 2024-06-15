@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DevTools z-index",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Print all elements with z-index sorted by that number.",
   "author": "Ginpei Takanashi",
   "icons": {
