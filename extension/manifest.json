@@ -10,7 +10,7 @@
   "devtools_page": "devtools_page/index.html",
   "browser_specific_settings": {
     "gecko": {
-      "id": "devtools-z-index@firefox-addons.ginpei.dev"
+      "id": "{40c9a151-fca9-4252-aa05-cb0df43d18b7}"
     }
   }
 }
