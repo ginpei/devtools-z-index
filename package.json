@@ -2,32 +2,33 @@
   "private": true,
   "name": "devtools-z-index",
   "scripts": {
+    "build": "npm run lint && npm run clean && npm run install-vendor && npm run pack",
     "clean": "rm extension.zip || true",
     "lint": "eslint extension && tsc && addons-linter extension",
     "install-vendor": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js extension/vendor/webextension-polyfill/",
     "start": "# TODO",
-    "pack": "npm run lint && npm run clean && npm run install-vendor && cd extension && zip -r ../extension.zip . -x */.gitkeep",
+    "pack": "cd extension && zip -r ../extension.zip . -x */.gitkeep",
     "postinstall": "npm run install-vendor",
     "test": "testem",
     "test-travis": "testem ci --launch Firefox"
   },
   "dependencies": {
-    "webextension-polyfill": "^0.4.0"
+    "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/firefox-webext-browser": "^67.0.2",
-    "@types/mocha": "^5.2.7",
-    "@types/sinon": "^7.0.13",
-    "@types/sinon-chai": "^3.2.3",
-    "addons-linter": "^1.14.0",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "sinon": "^7.5.0",
-    "sinon-chai": "^3.3.0",
+    "@types/chai": "^4.3.5",
+    "@types/firefox-webext-browser": "^111.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/sinon": "^10.0.15",
+    "@types/sinon-chai": "^3.2.9",
+    "addons-linter": "^6.9.0",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "sinon": "^15.2.0",
+    "sinon-chai": "^3.7.0",
     "sinon-chrome": "^3.0.1",
-    "testem": "^2.17.0",
-    "typescript": "^3.6.3"
+    "testem": "^3.10.1",
+    "typescript": "^5.1.3"
   }
 }

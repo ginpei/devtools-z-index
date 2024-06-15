@@ -57,8 +57,7 @@
   function start () {
     initColorScheme();
 
-    /** @type {HTMLTableElement} */
-    const elTable = (document.querySelector('#rankingTable-body'));
+    const elTable = /** @type {HTMLTableElement} */ (document.querySelector('#rankingTable-body'));
     tableUi.start({ elTable });
     tableUi.onSelect = (selector) => {
       selectElement(selector);

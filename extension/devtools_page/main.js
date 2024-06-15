@@ -18,10 +18,7 @@
 
     const sidebarAvailable = navigator.userAgent.match(' Chrome/');
     if (sidebarAvailable) {
-      pane = await new Promise((resolve) => {
-        // seems polyfill does not support this?
-        browser.devtools.panels.elements.createSidebarPane(title, resolve);
-      });
+      pane = await browser.devtools.panels.elements.createSidebarPane(title);
       // Chrome has `setPage()` 🙂
       pane.setPage(htmlPath);
     } else {

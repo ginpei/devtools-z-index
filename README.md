@@ -64,6 +64,40 @@ Honestly, I'm not planning to update since I felt satisfied tough, it would be f
 - Ability to update z-index for preview, like DevTools Style sub-pane
 - Set better icon somehow
 
+## Dev
+
+### Development for Chrome
+
+1. Open Extensions page
+   - `chrome://extensions/`
+2. Turn on "Developer mode" switch at the top right
+3. Press "Load unpacked" button
+4. Select `extension/` directory on this project
+5. You'll see your extension card on the page
+6. Close and open your DevTools to load
+7. To reload your updates:
+   1. Modify code and resources
+   2. Press a reload button on your extension card
+8. If your extension throws errors:
+   1. You'll see a Error button on your extension card
+
+### Development for Firefox
+
+- [Temporary installation in Firefox | Firefox Extension Workshop](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
+
+1. Open Firefox debug page: [`about:debugging#/runtime/this-firefox`](about:debugging#/runtime/this-firefox)
+2. Click "Load Temporary Add-on" button under "Temporary Extensions"
+3. Select the `manifest.json`
+4. It should be loaded
+
+### Publish
+
+1. Make sure `zip` is installed
+   1. `apt install zip` for WSL
+2. Run `npm run build`
+3. You will get a file `extension.zip` in the project root directory
+4. TODO
+
 ## License
 
 - MIT

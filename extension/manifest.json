@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "DevTools z-index",
   "version": "1.1.0",
   "description": "Print all elements with z-index sorted by that number.",
@@ -7,5 +7,10 @@
   "icons": {
     "90": "icons/icon-90.png"
   },
-  "devtools_page": "devtools_page/index.html"
+  "devtools_page": "devtools_page/index.html",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "devtools-z-index@firefox-addons.ginpei.dev"
+    }
+  }
 }
