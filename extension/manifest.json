@@ -7,5 +7,10 @@
   "icons": {
     "90": "icons/icon-90.png"
   },
-  "devtools_page": "devtools_page/index.html"
+  "devtools_page": "devtools_page/index.html",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "devtools-z-index@firefox-addons.ginpei.dev"
+    }
+  }
 }
