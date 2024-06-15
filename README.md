@@ -81,6 +81,15 @@ Honestly, I'm not planning to update since I felt satisfied tough, it would be f
 8. If your extension throws errors:
    1. You'll see a Error button on your extension card
 
+### Development for Firefox
+
+- [Temporary installation in Firefox | Firefox Extension Workshop](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
+
+1. Open Firefox debug page: [`about:debugging#/runtime/this-firefox`](about:debugging#/runtime/this-firefox)
+2. Click "Load Temporary Add-on" button under "Temporary Extensions"
+3. Select the `manifest.json`
+4. It should be loaded
+
 ### Publish
 
 1. Make sure `zip` is installed
