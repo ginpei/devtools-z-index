@@ -69,11 +69,17 @@ Honestly, I'm not planning to update since I felt satisfied tough, it would be f
 ### Development for Chrome
 
 1. Open Extensions page
-   1. `chrome://extensions/`
+   - `chrome://extensions/`
 2. Turn on "Developer mode" switch at the top right
 3. Press "Load unpacked" button
 4. Select `extension/` directory on this project
-5. Modify code and resources, press a reload button in the Extensions page
+5. You'll see your extension card on the page
+6. Close and open your DevTools to load
+7. To reload your updates:
+   1. Modify code and resources
+   2. Press a reload button on your extension card
+8. If your extension throws errors:
+   1. You'll see a Error button on your extension card
 
 ### Publish
 
