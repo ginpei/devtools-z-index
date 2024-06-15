@@ -90,13 +90,30 @@ Honestly, I'm not planning to update since I felt satisfied tough, it would be f
 3. Select the `manifest.json`
 4. It should be loaded
 
-### Publish
+### Publish for Chrome
+
+1. Prepare a zip file to upload
+   1. Make sure `zip` is installed
+      1. `apt install zip` for WSL
+   2. Run `npm run build`
+   3. You will get a file `extension.zip` in the project root directory
+2. Come to [Chrome Web Store - Developer Dashboard](https://chrome.google.com/webstore/devconsole/)
+3. Select your extension
+4. Left side panel &gt; Build &gt; Package
+5. Press "Upload new package" button at top right
+6. Upload the `extension.zip`
+7. You'll be navigated to the "Store listing" page
+8.  In need, update fields there and press "Save draft"
+9.  Press "Submit for review", and proceed the steps
+
+### Publish for Chrome
 
 1. Make sure `zip` is installed
-   1. `apt install zip` for WSL
-2. Run `npm run build`
-3. You will get a file `extension.zip` in the project root directory
-4. TODO
+2. Come to [Add-on Developer Hub &lt; Manage My Submissions](https://addons.mozilla.org/en-CA/developers/addons)
+3. Select your extension
+4. Press "Upload New Version" link button on left side, and proceed the steps
+5. Upload the `extension.zip`
+6. Continue submission steps
 
 ## License
 
